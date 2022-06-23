@@ -1,5 +1,13 @@
 // import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button, Alert } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Platform,
+  StatusBar,
+  Alert,
+} from "react-native";
 
 export default function App() {
   // console.log("App executed");
@@ -7,10 +15,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text numberOfLines={1}>
+      {/* <Text numberOfLines={1}>
         Hello React native! This is a reallyh really long test and I am writing
         this jus t to enjoy my process of learning and development in the world!
-      </Text>
+      </Text> */}
       <Button
         color="orange"
         title="Click Me"
@@ -22,13 +30,13 @@ export default function App() {
         }
       />
 
-      <Button
+      {/* <Button
         color="green"
         title="second button with prompt"
         onPress={() =>
           Alert.prompt("My title", "My message", (text) => console.log(text))
         }
-      />
+      /> */}
     </View>
   );
 }
@@ -37,8 +45,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   stretch: {
     width: 50,
