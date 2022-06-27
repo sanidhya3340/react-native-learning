@@ -1,31 +1,10 @@
-import {
-  StyleSheet,
-  SafeAreaView,
-  View,
-  Platform,
-  StatusBar,
-  Dimensions,
-} from "react-native";
-export default function App() {
-  // console.log("App executed");
-  // const handlePress = () => console.log("text being clicked");
-  // console.log(useDimensions());
-  // console.log(Dimensions.get("screen"));
-  return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{ backgroundColor: "dodgerblue", width: "100%", height: "30%" }}
-      ></View>
-    </SafeAreaView>
-  );
-}
+import { StyleSheet, View, Platform, StatusBar } from "react-native";
+import ViewImageScreen from "./screens/ViewImageScreen";
+import WelcomeScreen from "./screens/WelcomeScreen";
+import Card from "./app/components/Card";
+import ListingDetailsScreen from "./screens/ListingDetailsScreen";
+import MessagesScreen from "./screens/MessagesScreen";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
+export default function App() {
+  return <MessagesScreen />;
+}
